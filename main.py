@@ -9,7 +9,7 @@ from threading import Timer
 def is_market_open():
     """Check if the market is open by hitting the API."""
     try:
-        response = requests.get("http://localhost:3001/market/symbol?symbol=tatasteel&apiKey=07BQKTn3fgUcM3Z8MiY3aRjytlXAQ8c1")
+        response = requests.get("http://13.203.2.232/market/symbol?symbol=tatasteel&apiKey=07BQKTn3fgUcM3Z8MiY3aRjytlXAQ8c1")
         response.raise_for_status()
         data = response.json()
         market_open = data.get("is_market_open", False)
@@ -113,7 +113,7 @@ def task():
         print("Market is closed. Waiting for the next day.")
 
 # Schedule the task to run daily at 9:20 AM
-schedule.every().day.at("12:20").do(task)
+schedule.every().day.at("12:40").do(task)
 
 print("Scheduler is running. Waiting for the next scheduled task...")
 
