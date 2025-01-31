@@ -113,7 +113,7 @@ def task():
         print("Market is closed. Waiting for the next day.")
 
 # Schedule the task to run daily at 9:20 AM
-schedule.every().day.at("12:45").do(task)
+schedule.every().day.at("13:10").do(task)
 
 print("Scheduler is running. Waiting for the next scheduled task...")
 
